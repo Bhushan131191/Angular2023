@@ -1,0 +1,53 @@
+<div class = "container">
+    <h2>Marvellous form for students</h2>
+<form [formGroup] = "form1">
+    <div class = "form-group">
+    <label>Username</label>
+    <input [class.is-invalid]= "form1.get('username')?.invalid" type = "text" class = "form-control" formControlName= "username">
+    <small [class.d-none] = "form1.get('username')?.valid" class = "text-danger">Username is Mandatory!</small>
+    </div>
+
+    <div class ="form-group">
+        <label>Age</label>
+        <input [class.is-imvalid]= "form1.get('age')?.invalid" type = "month" type = "date" class = "form-control" formControlName = "age">
+        <small [class.d-none]= "form1.get('Age')?.valid" class = "text-danger">Enter your age</small>
+    </div>
+
+    <div class = "form-group">
+        <label>mail id</label>
+        <input [class.is-invalid]= "form1.get('mail id')?.invalid" type = "email" class = "form-control" formControlName = "mailid">
+        <small [class.d-none] = "form1.get('mail id')?.valid" class= "text-danger"></small>
+    </div>
+
+    <div class = "form-group">
+        <label>Password</label>
+            <input [class.is-invalid]= "form1.get('Password')?.invalid" type="password" class = "form-control" formControlName = "password">
+            <small [class.d-none]= "form1.get ('password')" class = "text-danger">Please insert password</small>
+    </div>
+
+    <div class = "form-group">
+        <label>Confirm Password</label>
+        <input [class.is-invalid]= "form1.get('confim password')?.invalid" type = "password" class= "form-control" formControlName = "confirmpass">
+        <small [class.is-invalid]= "form1.get('confirm password')?.valid" type = "text-danger">Confirm Password</small>
+    </div>
+
+<form formGroupName= "form1class">
+    <div class = "form-group">
+        <label>Enter name of your preferred batch</label>
+        <input type = "text" class = "form-control" formControlName = "batch">
+    </div>
+
+    <div class = "form-group">
+        <label>Enter Fees</label>
+        <input type = "number" class = "form-control" formControlName = "fees">
+    </div>
+</form>
+
+<button type = "button" class = "btn-btn secondary" (click)="setdata()">Set value</button>
+
+{{form1.value | json}}
+
+
+
+</form>
+</div>
